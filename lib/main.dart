@@ -4,7 +4,16 @@ void main() {
   runApp(
     MaterialApp(
       home: Scaffold(
-        body: Container(
+        body: GradientContainer(),
+      ),
+    ),
+  );
+}
+
+class GradientContainer extends StatelessWidget {
+  @override
+  Widget build(context) {
+    return Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(colors: [
               Colors.pink,
@@ -13,12 +22,10 @@ void main() {
           ),
           child: const Center(
             child: Text(
-              'Hello World',
+              'Hello World12',
               style: TextStyle(color: Colors.white, fontSize: 20),
             ),
           ),
-        ),
-      ),
-    ),
-  );
+        );
+  }
 }
