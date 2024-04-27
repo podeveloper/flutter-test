@@ -12,12 +12,11 @@ class DiceRoller extends StatefulWidget{
 
 class _DiceRollerState extends State<DiceRoller> {
 
-  var activeImage = 'assets/numberImages/1.jpg';
+  var currentDiceRoll = 2;
 
   void changeImage() {
-    var diceRoll = Random().nextInt(6) + 1;
     setState(() {
-          activeImage = 'assets/numberImages/$diceRoll.jpg';
+          currentDiceRoll = Random().nextInt(6) + 1;
     });
   }
 
@@ -26,7 +25,7 @@ class _DiceRollerState extends State<DiceRoller> {
     return Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-          Image.asset(activeImage,width: 100),
+          Image.asset('assets/numberImages/$currentDiceRoll.jpg',width: 100),
           TextButton(
             onPressed: changeImage, 
             style: TextButton.styleFrom(
