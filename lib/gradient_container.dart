@@ -14,8 +14,8 @@ class GradientContainer extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: LinearGradient(colors: colors, begin: Alignment.topLeft, end: Alignment.bottomRight),
       ),
-      child: const Center(
-        child: StyledText('Hello World'),
+      child: Center(
+        child: Image.asset('assets/numberImages/1.jpg',width: 200),
       ),
     );
   }
