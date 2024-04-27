@@ -8,6 +8,10 @@ class GradientContainer extends StatelessWidget {
 
   final List<Color> colors;
 
+  void changeImage() {
+    
+  }
+
   @override
   Widget build(context) {
     return Container(
@@ -15,7 +19,20 @@ class GradientContainer extends StatelessWidget {
         gradient: LinearGradient(colors: colors, begin: Alignment.topLeft, end: Alignment.bottomRight),
       ),
       child: Center(
-        child: Image.asset('assets/numberImages/1.jpg',width: 200),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+          Image.asset('assets/numberImages/1.jpg',width: 100),
+          TextButton(
+            onPressed: changeImage, 
+            style: TextButton.styleFrom(
+              padding: EdgeInsets.only(top: 20),
+              foregroundColor: Colors.white,
+              textStyle: const TextStyle(fontSize: 25)
+              ),
+            child: Text('Change'),
+            )
+        ],),
       ),
     );
   }
